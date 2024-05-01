@@ -1,13 +1,19 @@
 package org.example;
 
 import org.example.Ejercicio1.Ejercicio1;
+import org.example.Ejercicio5.Ejercicio5;
 
 // Trabajo practico n1 , realizado por Eugenio Romanelli y Juan Ignacio Rago
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println("Ejercicio 1: ");
+        System.out.println();
         ejercicio1();
-
+        System.out.println();
+        System.out.println("Ejercicio 5: ");
+        System.out.println();
+        ejercicio5();
     }
 
     public static void ejercicio1(){
@@ -21,17 +27,100 @@ public class Main {
         longitudMinimaPalabra = 4;
         String palabraMasUsada = Ejercicio1.contarPalabrasRepetidas(texto, longitudMinimaPalabra);
         System.out.println("La palabra más usada es: " + palabraMasUsada);
+        System.out.println();
 
         // prueba 2
         texto = "H h g a f tt yyy y w 23 54y6t6y7u8iooo0 tt 1443.hola.";
         longitudMinimaPalabra = 1; // Definir la longitud mínima de las palabras
         palabraMasUsada = Ejercicio1.contarPalabrasRepetidas(texto, longitudMinimaPalabra);
         System.out.println("La palabra más usada es: " + palabraMasUsada);
+        System.out.println();
 
         // prueba 3
         texto = "cursada CURsada OpTaTiVa CURSADA OP.TATIVA";
         longitudMinimaPalabra = 7; // Definir la longitud mínima de las palabras
         palabraMasUsada = Ejercicio1.contarPalabrasRepetidas(texto, longitudMinimaPalabra);
         System.out.println("La palabra más usada es: " + palabraMasUsada);
+        System.out.println();
     }
+
+    public static void ejercicio5(){
+        int columnas;
+        int filas;
+        int posx;
+        int posy;
+        int retorno;
+
+        columnas = 4;
+        filas = 4;
+        posx = 1;
+        posy = 1;
+        char[][] matrizEj1 = new char[][]{{'E', '.', '.', '.'},
+                                 {'#', '#', '#', '.'},
+                                 {'.', '.', '.', '.'},
+                                 {'.', '.', 'S', '.'}};
+        imprimirMatriz(matrizEj1,columnas,filas);
+        retorno = Ejercicio5.getJuego(matrizEj1,columnas,filas,posx,posy);
+
+        System.out.println();
+        if (retorno!=-1)
+            System.out.println("La solución mas eficiente se resuelve con " + retorno + " pasos");
+        else
+            System.out.println("No tiene solución");
+        System.out.println();
+
+        columnas = 4;
+        filas = 6;
+        posx = 1;
+        posy = 1;
+        char[][] matrizEj2 = new char[][]{  {'E', '.', '.', '.'},
+                                            {'#', '#', '#', '.'},
+                                            {'.', '.', '.', '.'},
+                                            {'.', '.', '#', '#'},
+                                            {'.', '#', 'S', '.'},
+                                            {'.', '.', '.', '.'}};
+        imprimirMatriz(matrizEj2,columnas,filas);
+        retorno = Ejercicio5.getJuego(matrizEj2,columnas,filas,posx,posy);
+
+        System.out.println();
+        if (retorno!=-1)
+            System.out.println("La solución mas eficiente se resuelve con " + retorno + " pasos");
+        else
+            System.out.println("No tiene solución");
+        System.out.println();
+
+        columnas = 4;
+        filas = 6;
+        posx = 1;
+        posy = 1;
+        char[][] matrizEj3 = new char[][]{  {'E', '.', '.', '.'},
+                {'#', '#', '#', '.'},
+                {'.', '.', '.', '.'},
+                {'.', '.', '#', '#'},
+                {'.', '#', 'S', '.'},
+                {'.', '#', '.', '.'}};
+        imprimirMatriz(matrizEj3,columnas,filas);
+        retorno = Ejercicio5.getJuego(matrizEj3,columnas,filas,posx,posy);
+
+        System.out.println();
+        if (retorno!=-1)
+            System.out.println("La solución mas eficiente se resuelve con " + retorno + " pasos");
+        else
+            System.out.println("No tiene solución");
+        System.out.println();
+    }
+
+    private static void imprimirMatriz(char[][] matriz,int cols, int fils){
+        System.out.println("Matriz: ");
+        System.out.println();
+        for(int j = 0; j<(fils) ; j++){
+            for(int i = 0; i<(cols) ; i++){
+                System.out.print(matriz[j][i] + "  ");
+            }
+            System.out.println();
+        }
+    }
+
+
+
 }

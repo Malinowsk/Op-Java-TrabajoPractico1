@@ -24,7 +24,9 @@ public class Ejercicio1 {
             }
         }
         guardarPalabra(); // se guarda la palabra en el hashmap y la contabiliza
+        System.out.println("Contador de palabras:");
         System.out.println(contadorPalabras); // borrar luego
+        System.out.println();
         return palabraMasRepetida;
     }
 
