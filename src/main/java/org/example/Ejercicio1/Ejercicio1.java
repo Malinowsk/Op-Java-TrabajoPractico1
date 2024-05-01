@@ -11,6 +11,63 @@ public class Ejercicio1 {
     private static int tamanio;
     private static Map<String, Integer> contadorPalabras;
 
+    // Retorno la palabra correcta mas repetida
+    public static String contarPalabrasRepetidas(String texto, int tamaniomax) {
+
+        inicializacion(tamaniomax); // inicializar variables
+
+        for (char c : texto.toCharArray()) { // recorremos el string , caracter a caracter
+            if (Character.isLetter(c)) { // consulta si es letra
+                palabraActual.append(c);    // agrego letra a palabra actual
+            } else {
+                guardarPalabra();   // se guarda la palabra en el hashmap y la contabiliza
+            }
+        }
+        guardarPalabra(); // se guarda la palabra en el hashmap y la contabiliza
+        System.out.println(contadorPalabras); // borrar luego
+        return palabraMasRepetida;
+    }
+
+    private static void inicializacion(int tamaniomax){
+        tamanio = tamaniomax;
+        // Crear un mapa para contar las ocurrencias de cada palabra
+        contadorPalabras = new HashMap<>();
+        // Quedarme con la ocurrencias mayor
+        palabraMasRepetida = "";
+        maxRepeticiones = 0;
+        // crear y llevar la palabra actual
+        palabraActual = new StringBuilder();
+    }
+
+
+    private static void guardarPalabra() {
+        String palabra = palabraActual.toString().toLowerCase();
+        if (!palabra.isEmpty()) { // palabra actual tiene algo?
+            if (palabra.length() >= tamanio) { // la palabra actual contiene el tamaño necesario para contabilizarla?
+
+                // Contar las ocurrencias de la palabra actual
+                int contador = contadorPalabras.getOrDefault(palabra, 0) + 1;
+
+                // agregar al hashmap
+                contadorPalabras.put(palabra, contador);
+
+                // Actualizar la palabra más repetida si es necesario
+                if (contador > maxRepeticiones) {
+                    maxRepeticiones = contador;
+                    palabraMasRepetida = palabra;
+                }
+            }
+            palabraActual.setLength(0); // Limpiar la palabra actual
+        }
+    }
+
+}
+
+
+
+
+
+
 /*
 
         public static String contarPalabrasRepetidas(String texto, int tamanio) {
@@ -43,49 +100,3 @@ public class Ejercicio1 {
         }
 
 */
-
-
-    public static String contarPalabrasRepetidas(String texto, int tamaniomax) {
-        tamanio = tamaniomax;
-        // Crear un mapa para contar las ocurrencias de cada palabra
-        contadorPalabras = new HashMap<>();
-        // Quedarme con la ocurrencias mayor
-        palabraMasRepetida = "";
-        maxRepeticiones = 0;
-        // crear y llevar la palabra actual
-        palabraActual = new StringBuilder();
-
-        for (char c : texto.toCharArray()) {
-            if (Character.isLetter(c)) {
-                palabraActual.append(c);
-            } else {
-                guardarPalabra();
-            }
-        }
-        guardarPalabra();
-        System.out.println(contadorPalabras);
-        return palabraMasRepetida;
-    }
-
-    private static void guardarPalabra() {
-        String palabra = palabraActual.toString().toLowerCase();
-        if (!palabra.isEmpty()) { // palabra actual tiene algo?
-            if (palabra.length() >= tamanio) { // la palabra actual contiene el tamaño necesario para contabilizarla?
-
-                // Contar las ocurrencias de la palabra actual
-                int contador = contadorPalabras.getOrDefault(palabra, 0) + 1;
-
-                // agregar al hashmap
-                contadorPalabras.put(palabra, contador);
-
-                // Actualizar la palabra más repetida si es necesario
-                if (contador > maxRepeticiones) {
-                    maxRepeticiones = contador;
-                    palabraMasRepetida = palabra;
-                }
-            }
-            palabraActual.setLength(0); // Limpiar la palabra actual
-        }
-    }
-
-}
