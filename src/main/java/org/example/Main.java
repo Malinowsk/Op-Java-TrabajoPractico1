@@ -2,6 +2,9 @@ package org.example;
 
 import org.example.Ejercicio1.Ejercicio1;
 import org.example.Ejercicio5.Ejercicio5;
+import org.example.Ejercicio2.Ejercicio2;
+import java.math.BigInteger;
+
 
 // Trabajo practico n1 , realizado por Eugenio Romanelli y Juan Ignacio Rago
 public class Main {
@@ -11,9 +14,14 @@ public class Main {
         System.out.println();
         ejercicio1();
         System.out.println();
+        System.out.println("Ejercicio 2: ");
+        System.out.println();
+        ejercicio2();
+        System.out.println();
         System.out.println("Ejercicio 5: ");
         System.out.println();
         ejercicio5();
+
     }
 
     public static void ejercicio1(){
@@ -42,6 +50,16 @@ public class Main {
         palabraMasUsada = Ejercicio1.contarPalabrasRepetidas(texto, longitudMinimaPalabra);
         System.out.println("La palabra más usada es: " + palabraMasUsada);
         System.out.println();
+    }
+
+
+    public static void ejercicio2(){
+
+        // Ejercicio 2
+
+        int n = 1000; // Valor de Fibonacci a calcular
+        BigInteger fibonacci = Ejercicio2.Fibonacci(n);
+        System.out.println("El valor de Fibonacci para " + n + " es: " + fibonacci);
     }
 
     public static void ejercicio5(){
@@ -120,7 +138,5 @@ public class Main {
             System.out.println();
         }
     }
-
-
 
 }

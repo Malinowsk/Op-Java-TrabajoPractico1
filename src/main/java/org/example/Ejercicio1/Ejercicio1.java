@@ -3,6 +3,17 @@ package org.example.Ejercicio1;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/*
+
+Problema 1: Palabra más usada
+Se desea implementar un sistema que dado un String retorne la palabra más usada. Las palabras
+son divididas por la existencia de espacios o caracteres diferentes a letras entre las mismas. Solo se
+considera como palabra a toda secuencia de caracteres con una longitud mayor o igual a N donde N
+es un parámetro. Finalmente, la igualdad entre las palabras debe ignorar el uso de mayúsculas y
+minúsculas.
+
+ */
 public class Ejercicio1 {
 
     private static StringBuilder palabraActual;
