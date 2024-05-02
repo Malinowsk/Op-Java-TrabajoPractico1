@@ -74,9 +74,9 @@ public class Main {
         posx = 1;
         posy = 1;
         char[][] matrizEj1 = new char[][]{{'E', '.', '.', '.'},
-                                 {'#', '#', '#', '.'},
-                                 {'.', '.', '.', '.'},
-                                 {'.', '.', 'S', '.'}};
+                                          {'#', '#', '#', '.'},
+                                          {'.', '.', '.', '.'},
+                                          {'.', '.', 'S', '.'}};
         imprimirMatriz(matrizEj1,columnas,filas);
         retorno = Ejercicio5.getJuego(matrizEj1,columnas,filas,posx,posy);
 
@@ -93,9 +93,9 @@ public class Main {
         posy = 1;
         char[][] matrizEj2 = new char[][]{  {'E', '.', '.', '.'},
                                             {'#', '#', '#', '.'},
-                                            {'.', '.', '.', '.'},
+                                            {'.', 'S', 'a', '.'},
                                             {'.', '.', '#', '#'},
-                                            {'.', '#', 'S', '.'},
+                                            {'.', '#', '.', 'a'},
                                             {'.', '.', '.', '.'}};
         imprimirMatriz(matrizEj2,columnas,filas);
         retorno = Ejercicio5.getJuego(matrizEj2,columnas,filas,posx,posy);
@@ -111,12 +111,12 @@ public class Main {
         filas = 6;
         posx = 1;
         posy = 1;
-        char[][] matrizEj3 = new char[][]{  {'E', '.', '.', '.'},
-                {'#', '#', '#', '.'},
-                {'.', '.', '.', '.'},
-                {'.', '.', '#', '#'},
-                {'.', '#', 'S', '.'},
-                {'.', '#', '.', '.'}};
+        char[][] matrizEj3 = new char[][]{  {'E', '.', '.', 'a'},
+                                            {'#', '#', '.', '.'},
+                                            {'a', '.', '.', '.'},
+                                            {'.', '.', '#', '#'},
+                                            {'.', '#', 'S', '.'},
+                                            {'z', '#', 'z', '.'}};
         imprimirMatriz(matrizEj3,columnas,filas);
         retorno = Ejercicio5.getJuego(matrizEj3,columnas,filas,posx,posy);
 
