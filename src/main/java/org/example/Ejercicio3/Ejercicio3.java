@@ -40,18 +40,23 @@ public class Ejercicio3 {
         }
 
 
-        public Boolean esArbolDeBusqueda(Nodo nodo){
+        public Boolean esArbolDeBusqueda(Nodo nodo, int valor){
 
             if (nodo != null){
-                if (nodo.getLeft() !=null && nodo.getData() > nodo.getLeft().getData()) {
-                    esArbolDeBusqueda(nodo.left);
+
+                if (nodo.getData() == valor) {
+                    esArbolDeBusqueda(nodo.left, valor);
+                }
+
+
+                if (nodo.getData() < valor) {
+                    esArbolDeBusqueda(nodo.left, valor);
                 }else {
                     return false;
                 }
 
-
-                if (nodo.getRight() !=null && nodo.getData() < nodo.getRight().getData()) {
-                    esArbolDeBusqueda(nodo.right);
+                if (nodo.getData() > valor) {
+                    esArbolDeBusqueda(nodo.right, valor);
                 }else {
                     return false;
                 }
@@ -61,8 +66,8 @@ public class Ejercicio3 {
         }
 
 
-        public void verificarArbolDeBusqueda(Nodo nodo){
-            if (esArbolDeBusqueda(nodo)){
+        public void verificarArbolDeBusqueda(Nodo nodo, int valor){
+            if (esArbolDeBusqueda(nodo, valor)){
                 System.out.println("Es un árbol binario de búsqueda");
             }
             else {

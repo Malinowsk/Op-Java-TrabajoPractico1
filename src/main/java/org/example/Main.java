@@ -90,7 +90,7 @@ public class Main {
 
         arbol.mostrarArbol();
 
-        arbol.verificarArbolDeBusqueda(nodo3);
+        arbol.verificarArbolDeBusqueda(nodo1, nodo1.getData());
 
     }
 
