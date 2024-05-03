@@ -1,8 +1,9 @@
 package org.example;
 
 import org.example.Ejercicio1.Ejercicio1;
-import org.example.Ejercicio5.Ejercicio5;
 import org.example.Ejercicio2.Ejercicio2;
+import org.example.Ejercicio5.Ejercicio5;
+import org.example.Ejercicio3.Ejercicio3;
 import java.math.BigInteger;
 
 
@@ -10,17 +11,20 @@ import java.math.BigInteger;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Ejercicio 1: ");
-        System.out.println();
-        ejercicio1();
-        System.out.println();
+//        System.out.println("Ejercicio 1: ");
+//        System.out.println();
+//        ejercicio1();
+//        System.out.println();
+//        System.out.println("Ejercicio 2: ");
+//        System.out.println();
+//        ejercicio2();
         System.out.println("Ejercicio 2: ");
         System.out.println();
-        ejercicio2();
-        System.out.println();
-        System.out.println("Ejercicio 5: ");
-        System.out.println();
-        ejercicio5();
+        ejercicio3();
+//        System.out.println();
+//        System.out.println("Ejercicio 5: ");
+//        System.out.println();
+//        ejercicio5();
 
     }
 
@@ -61,6 +65,35 @@ public class Main {
         BigInteger fibonacci = Ejercicio2.Fibonacci(n);
         System.out.println("El valor de Fibonacci para " + n + " es: " + fibonacci);
     }
+
+
+    public static void ejercicio3(){
+
+        // Ejercicio 3
+
+        Ejercicio3.Nodo nodo1 = new Ejercicio3.Nodo(3, null, null);
+        Ejercicio3.Nodo nodo2 = new Ejercicio3.Nodo(2, null, null);
+        Ejercicio3.Nodo nodo3 = new Ejercicio3.Nodo(65, null, null);
+        Ejercicio3.Nodo nodo4 = new Ejercicio3.Nodo(10, null, null);
+
+        nodo1.setLeft(nodo2);
+        nodo1.setRight(nodo4);
+        nodo4.setRight(nodo3);
+
+
+        Ejercicio3.Arbol arbol = new Ejercicio3.Arbol();
+
+        arbol.agregarNodo(nodo1);
+        arbol.agregarNodo(nodo2);
+        arbol.agregarNodo(nodo3);
+        arbol.agregarNodo(nodo4);
+
+        arbol.mostrarArbol();
+
+        arbol.verificarArbolDeBusqueda(nodo3);
+
+    }
+
 
     public static void ejercicio5(){
         int columnas;
