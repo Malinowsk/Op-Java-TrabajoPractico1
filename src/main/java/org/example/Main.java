@@ -71,26 +71,29 @@ public class Main {
 
         // Ejercicio 3
 
-        Ejercicio3.Nodo nodo1 = new Ejercicio3.Nodo(3, null, null);
+        Ejercicio3.Nodo nodo3 = new Ejercicio3.Nodo(3, null, null);
         Ejercicio3.Nodo nodo2 = new Ejercicio3.Nodo(2, null, null);
-        Ejercicio3.Nodo nodo3 = new Ejercicio3.Nodo(65, null, null);
-        Ejercicio3.Nodo nodo4 = new Ejercicio3.Nodo(10, null, null);
+        Ejercicio3.Nodo nodo65 = new Ejercicio3.Nodo(65, null, null);
+        Ejercicio3.Nodo nodo10 = new Ejercicio3.Nodo(10, null, null);
 
-        nodo1.setLeft(nodo2);
-        nodo1.setRight(nodo4);
-        nodo4.setRight(nodo3);
+        nodo3.setLeft(nodo2);
+        nodo3.setRight(nodo65);
+
+        nodo65.setLeft(null);
+        nodo65.setRight(nodo10);
+
 
 
         Ejercicio3.Arbol arbol = new Ejercicio3.Arbol();
 
-        arbol.agregarNodo(nodo1);
-        arbol.agregarNodo(nodo2);
         arbol.agregarNodo(nodo3);
-        arbol.agregarNodo(nodo4);
+        arbol.agregarNodo(nodo2);
+        arbol.agregarNodo(nodo65);
+        arbol.agregarNodo(nodo10);
 
         arbol.mostrarArbol();
 
-        arbol.verificarArbolDeBusqueda(nodo1, nodo1.getData());
+        arbol.verificarArbolDeBusqueda(nodo3);
 
     }
 

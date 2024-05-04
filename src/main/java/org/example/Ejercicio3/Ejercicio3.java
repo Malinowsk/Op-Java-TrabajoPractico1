@@ -21,64 +21,80 @@ import java.util.ArrayList;
 
 public class Ejercicio3 {
 
-    public static class Arbol{
+    // Clase que representa un árbol
+    public static class Arbol {
         ArrayList<Nodo> arbol;
 
-        public Arbol(){
+        public Arbol() {
             this.arbol = new ArrayList<>();
         }
 
-        public void agregarNodo(Nodo n){
+        public void agregarNodo(Nodo n) {
             this.arbol.add(n);
         }
 
-        public void mostrarArbol(){
+        public void mostrarArbol() {
             System.out.println("Arbol: ");
-            for (Nodo nodo : this.arbol){
+            for (Nodo nodo : this.arbol) {
                 nodo.mostrar();
             }
         }
 
-
-        public Boolean esArbolDeBusqueda(Nodo nodo, int valor){
-
-            if (nodo != null){
-
-                if (nodo.getData() == valor) {
-                    esArbolDeBusqueda(nodo.left, valor);
-                }
-
+        // Verifica si todos los nodos a la izquierda del nodo actual cumplen la condición de árbol binario de búsqueda
+        public boolean verificarIzquierda(Nodo nodo, int valor, BooleanWrapper esFalse) {
+            if (nodo != null && !esFalse.getValue()) {
 
                 if (nodo.getData() < valor) {
-                    esArbolDeBusqueda(nodo.left, valor);
-                }else {
+
+                    if (!verificarIzquierda(nodo.left, valor, esFalse))
+                        return false;
+                    if (!verificarIzquierda(nodo.right, valor, esFalse))
+                        return false;
+                } else {
+                    esFalse.setValue(true);
                     return false;
                 }
-
-                if (nodo.getData() > valor) {
-                    esArbolDeBusqueda(nodo.right, valor);
-                }else {
-                    return false;
-                }
-
-           }
+            }
             return true;
         }
 
 
-        public void verificarArbolDeBusqueda(Nodo nodo, int valor){
-            if (esArbolDeBusqueda(nodo, valor)){
-                System.out.println("Es un árbol binario de búsqueda");
+        // Verifica si todos los nodos a la derecha del nodo actual cumplen la condición de árbol binario de búsqueda
+        public boolean verificarDerecha(Nodo nodo, int valor, BooleanWrapper esFalse) {
+
+            if (nodo != null && !esFalse.getValue()) {
+
+                if (nodo.getData() > valor) {
+
+                    if (!verificarDerecha(nodo.left, valor, esFalse))
+                        return false;
+                    if (!verificarDerecha(nodo.right, valor, esFalse))
+                        return false;
+                } else {
+                    esFalse.setValue(true);
+                    return false;
+                }
             }
-            else {
+            return true;
+        }
+
+        // Verifica si un árbol es un árbol binario de búsqueda
+        public boolean esArbolDeBusqueda(Nodo nodo) {
+            BooleanWrapper esFalse = new BooleanWrapper(false);
+            return (nodo != null && verificarIzquierda(nodo.left, nodo.getData(), esFalse) && verificarDerecha(nodo.right, nodo.getData(), esFalse));
+        }
+
+
+        public void verificarArbolDeBusqueda(Nodo nodo) {
+            if (esArbolDeBusqueda(nodo)) {
+                System.out.println("Es un árbol binario de búsqueda");
+            } else {
                 System.out.println("No un árbol binario de búsqueda");
             }
         }
     }
 
-
-
-
+    // Clase que representa un nodo
     public static class Nodo {
         int data;
         Nodo left;
@@ -93,22 +109,26 @@ public class Ejercicio3 {
         public int getData() {
             return data;
         }
+
         public void setData(int data) {
             this.data = data;
         }
+
         public Nodo getLeft() {
             return left;
         }
+
         public void setLeft(Nodo left) {
             this.left = left;
         }
+
         public Nodo getRight() {
             return right;
         }
+
         public void setRight(Nodo right) {
             this.right = right;
         }
-
 
         public void mostrar() {
             System.out.println("Nodo: " + data);
@@ -128,6 +148,21 @@ public class Ejercicio3 {
         }
     }
 
+    // Clase que encapsula un booleano, utilizada para cambiar su valor por referencia
+    public static class BooleanWrapper {
+        private boolean value;
 
+        public BooleanWrapper(boolean value) {
+            this.value = value;
+        }
 
+        public boolean getValue() {
+            return value;
+        }
+
+        public void setValue(boolean value) {
+            this.value = value;
+        }
+    }
 }
+
