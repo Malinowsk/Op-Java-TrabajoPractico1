@@ -5,6 +5,9 @@ import org.example.Ejercicio2.Ejercicio2;
 import org.example.Ejercicio5.Ejercicio5;
 import org.example.Ejercicio3.Ejercicio3;
 import java.math.BigInteger;
+import java.util.Arrays;
+
+import static org.example.Ejercicio4.Ejercicio4.contarFotosArtisticas;
 
 
 // Trabajo practico n1 , realizado por Eugenio Romanelli y Juan Ignacio Rago
@@ -18,9 +21,12 @@ public class Main {
 //        System.out.println("Ejercicio 2: ");
 //        System.out.println();
 //        ejercicio2();
-        System.out.println("Ejercicio 2: ");
+//        System.out.println("Ejercicio 3: ");
+//        System.out.println();
+//        ejercicio3();
+        System.out.println("Ejercicio 4: ");
         System.out.println();
-        ejercicio3();
+        ejercicio4();
 //        System.out.println();
 //        System.out.println("Ejercicio 5: ");
 //        System.out.println();
@@ -71,31 +77,65 @@ public class Main {
 
         // Ejercicio 3
 
-        Ejercicio3.Nodo nodo3 = new Ejercicio3.Nodo(3, null, null);
+        // Creacion de los nodos
+        Ejercicio3.Nodo nodo1 = new Ejercicio3.Nodo(1, null, null);
         Ejercicio3.Nodo nodo2 = new Ejercicio3.Nodo(2, null, null);
+        Ejercicio3.Nodo nodo3 = new Ejercicio3.Nodo(3, null, null);
         Ejercicio3.Nodo nodo65 = new Ejercicio3.Nodo(65, null, null);
         Ejercicio3.Nodo nodo10 = new Ejercicio3.Nodo(10, null, null);
 
-        nodo3.setLeft(nodo2);
-        nodo3.setRight(nodo65);
-
-        nodo65.setLeft(null);
-        nodo65.setRight(nodo10);
-
-
-
+        // Creacion del arbol
         Ejercicio3.Arbol arbol = new Ejercicio3.Arbol();
 
+        arbol.agregarNodo(nodo1);
         arbol.agregarNodo(nodo3);
         arbol.agregarNodo(nodo2);
         arbol.agregarNodo(nodo65);
         arbol.agregarNodo(nodo10);
+
+
+        // Relaciona los nodos entre si
+        nodo3.setLeft(nodo2);
+        nodo3.setRight(nodo65);
+
+        nodo65.setLeft(nodo1);
+        nodo65.setRight(nodo10);
+
 
         arbol.mostrarArbol();
 
         arbol.verificarArbolDeBusqueda(nodo3);
 
     }
+
+
+
+    public static void ejercicio4(){
+
+        // Ejercicio 4
+
+        char[] A1 = {'a', 'f', 'a', 'e', 'a'};
+        int X1 = 1;
+        int Y1 = 2;
+        System.out.println("A1 = " + Arrays.toString(A1));
+        System.out.println("Salida esperada = 1");
+        System.out.println("Salida obtenida = " + contarFotosArtisticas(A1, X1, Y1) + "\n");
+
+        char[] A2 = {'a', 'f', 'a', 'e', 'a'};
+        int X2 = 2;
+        int Y2 = 3;
+        System.out.println("A2 = " + Arrays.toString(A2));
+        System.out.println("Salida esperada = 0");
+        System.out.println("Salida obtenida = " + contarFotosArtisticas(A2, X2, Y2) + "\n");
+
+        char[] A3 = {'.', 'f', 'e', 'a', 'a', 'f', '.', 'e'};
+        int X3 = 1;
+        int Y3 = 3;
+        System.out.println("A3 = " + Arrays.toString(A3));
+        System.out.println("Salida esperada = 3");
+        System.out.println("Salida obtenida = " + contarFotosArtisticas(A3, X3, Y3) + "\n");
+    }
+
 
 
     public static void ejercicio5(){

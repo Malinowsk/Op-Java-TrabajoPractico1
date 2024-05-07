@@ -57,7 +57,7 @@ public class Ejercicio2 {
         if (n <= 1){
             return BigInteger.valueOf(1);}
         else {
-            for (int i = 2; i < n; i++) { 
+            for (int i = 2; i < n; i++) {
                 fib = fibMenos1.add(fibMenos2);  //Suma los dos términos
                 fibMenos2 = fibMenos1;
                 fibMenos1 = fib;
