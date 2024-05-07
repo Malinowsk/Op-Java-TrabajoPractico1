@@ -43,7 +43,8 @@ public class Ejercicio4 {
             for (int i = 0; i < A.length; i++) {
                 if (A[i] == 'f') {  // Si encontramos un fotógrafo
 
-                    for (int j = X; j <= Y; j++) { // A partir del fotografo encontrado, se busca un artista hacia la derecha del arreglo
+                    // Recorrido hacia la derecha de f
+                    for (int j = X; j <= Y; j++) { // A partir del fotografo encontrado, se busca un artista
                         if (i+j < A.length && A[i + j] == 'a') { // Si encontramos un artista a una distancia desde X hasta Y
 
                             for (int k = X; k <= Y; k++) { // A partir del artista encontrado, se busca un escenario
@@ -56,7 +57,8 @@ public class Ejercicio4 {
                         }
                     }
 
-                    for (int j = X; j <= Y; j++) { // A partir del fotografo encontrado, se busca un artista hacia la izquierda del arreglo
+                    // Recorrido hacia la izquierda de f
+                    for (int j = X; j <= Y; j++) { // A partir del fotografo encontrado, se busca un artista
                         if (i-j >= 0 && A[i - j] == 'a') { // Si encontramos un artista a una distancia desde X hasta Y
 
                             for (int k = X; k <= Y; k++) { // A partir del artista encontrado, se busca un escenario
