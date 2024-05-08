@@ -2,8 +2,10 @@ package org.example;
 
 import org.example.Ejercicio1.Ejercicio1;
 import org.example.Ejercicio2.Ejercicio2;
+import org.example.Ejercicio3.Ejercicio3_opcional;
 import org.example.Ejercicio5.Ejercicio5;
 import org.example.Ejercicio3.Ejercicio3;
+import org.example.Ejercicio3.Nodo;
 import java.math.BigInteger;
 import java.util.Arrays;
 
@@ -24,9 +26,12 @@ public class Main {
 //        System.out.println("Ejercicio 3: ");
 //        System.out.println();
 //        ejercicio3();
-        System.out.println("Ejercicio 4: ");
+        System.out.println("Ejercicio 3: ");
         System.out.println();
-        ejercicio4();
+        ejercicio3_opcional();
+//        System.out.println("Ejercicio 4: ");
+//        System.out.println();
+//        ejercicio4();
 //        System.out.println();
 //        System.out.println("Ejercicio 5: ");
 //        System.out.println();
@@ -105,6 +110,71 @@ public class Main {
         arbol.mostrarArbol();
 
         arbol.verificarArbolDeBusqueda(nodo3);
+
+    }
+
+    public static void ejercicio3_opcional(){
+
+        // Ejercicio 3
+
+        // Creacion del arbol
+
+        Nodo nodo1 = new Nodo(1, null, null);
+        Nodo nodo2 = new Nodo(2, nodo1, null);
+        Nodo nodo10 = new Nodo(10, null, null);
+        Nodo nodo65 = new Nodo(65, nodo10, null);
+        Nodo nodo3 = new Nodo(3, nodo2, nodo65);
+
+        // Creacion del arbol
+        boolean retorno = Ejercicio3_opcional.esBinarioDeBusqueda(nodo3);
+        if(retorno){
+            System.out.println("Es binario de busqueda");
+        }
+        else {
+            System.out.println("No es binario de busqueda");
+        }
+
+        // Creacion del arbol
+
+        nodo1 = new Nodo(1, null, null);
+        nodo2 = new Nodo(2, nodo1, null);
+        nodo10 = new Nodo(2, null, null);
+        nodo65 = new Nodo(65, nodo10, null);
+        nodo3 = new Nodo(3, nodo2, nodo65);
+
+        // Creacion del arbol
+        retorno = Ejercicio3_opcional.esBinarioDeBusqueda(nodo3);
+        if(retorno){
+            System.out.println("Es binario de busqueda");
+        }
+        else {
+            System.out.println("No es binario de busqueda");
+        }
+
+
+        // Creacion del arbol
+
+        nodo1 = new Nodo(1, null, null);
+        nodo2 = new Nodo(2, nodo1, null);
+        Nodo nodo4 = new Nodo(4, null, null);
+        nodo3 = new Nodo(3, nodo2, nodo4);
+        Nodo nodo30 = new Nodo(30, nodo3, null);
+        nodo10 = new Nodo(50, null, null);
+        Nodo nodo69 = new Nodo(69, null, null);
+        Nodo nodo71 = new Nodo(71, null, null);
+        Nodo nodo70 = new Nodo(70, nodo69, nodo71);
+        nodo65 = new Nodo(65, nodo10, nodo70);
+        Nodo nodo41 = new Nodo(41, nodo30, nodo65);
+
+        // Creacion del arbol
+        retorno = Ejercicio3_opcional.esBinarioDeBusqueda(nodo41);
+        if(retorno){
+            System.out.println("Es binario de busqueda");
+        }
+        else {
+            System.out.println("No es binario de busqueda");
+        }
+
 
     }
 
