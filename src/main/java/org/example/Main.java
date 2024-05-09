@@ -2,41 +2,40 @@ package org.example;
 
 import org.example.Ejercicio1.Ejercicio1;
 import org.example.Ejercicio2.Ejercicio2;
-import org.example.Ejercicio3.Ejercicio3_opcional;
-import org.example.Ejercicio5.Ejercicio5;
 import org.example.Ejercicio3.Ejercicio3;
+import org.example.Ejercicio4.Ejercicio4;
+import org.example.Ejercicio5.Ejercicio5;
 import org.example.Ejercicio3.Nodo;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-import static org.example.Ejercicio4.Ejercicio4.contarFotosArtisticas;
 
 
 // Trabajo practico n1 , realizado por Eugenio Romanelli y Juan Ignacio Rago
 public class Main {
     public static void main(String[] args) {
 
-//        System.out.println("Ejercicio 1: ");
-//        System.out.println();
-//        ejercicio1();
-//        System.out.println();
-//        System.out.println("Ejercicio 2: ");
-//        System.out.println();
-//        ejercicio2();
-//        System.out.println("Ejercicio 3: ");
-//        System.out.println();
-//        ejercicio3();
+       /* System.out.println("Ejercicio 1: ");
+        System.out.println();
+        ejercicio1();*/
+        System.out.println();
+        System.out.println("Ejercicio 2: ");
+        System.out.println();
+        ejercicio2();
+  /*
+        System.out.println();
         System.out.println("Ejercicio 3: ");
         System.out.println();
-        ejercicio3_opcional();
-//        System.out.println("Ejercicio 4: ");
-//        System.out.println();
-//        ejercicio4();
-//        System.out.println();
-//        System.out.println("Ejercicio 5: ");
-//        System.out.println();
-//        ejercicio5();
-
+        ejercicio3();
+        System.out.println();
+        System.out.println("Ejercicio 4: ");
+        System.out.println();
+        ejercicio4();
+        System.out.println();
+        System.out.println("Ejercicio 5: ");
+        System.out.println();
+        ejercicio5();
+*/
     }
 
     public static void ejercicio1(){
@@ -72,48 +71,21 @@ public class Main {
 
         // Ejercicio 2
 
-        int n = 1000; // Valor de Fibonacci a calcular
-        BigInteger fibonacci = Ejercicio2.Fibonacci(n);
-        System.out.println("El valor de Fibonacci para " + n + " es: " + fibonacci);
-    }
+        int n = 90; // Valor de Fibonacci a calcular
+        long fibonacci_primitivo = Ejercicio2.Fibonacci_primitivo(n);
+        System.out.println("El valor de Fibonacci para " + n + " usando long es: " + fibonacci_primitivo);
 
+        n = 1000; // Valor de Fibonacci a calcular
+        double fibonacci_flotante = Ejercicio2.Fibonacci_flotante(n);
+        System.out.println("El valor de Fibonacci para " + n + " usando double es: " + fibonacci_flotante);
+
+        //
+        n = 1000; // Valor de Fibonacci a calcular
+        BigInteger fibonacci = Ejercicio2.Fibonacci(n);
+        System.out.println("El valor de Fibonacci para " + n + " usando BigInteger es: " + fibonacci);
+    }
 
     public static void ejercicio3(){
-
-        // Ejercicio 3
-
-        // Creacion de los nodos
-        Ejercicio3.Nodo nodo1 = new Ejercicio3.Nodo(1, null, null);
-        Ejercicio3.Nodo nodo2 = new Ejercicio3.Nodo(2, null, null);
-        Ejercicio3.Nodo nodo3 = new Ejercicio3.Nodo(3, null, null);
-        Ejercicio3.Nodo nodo65 = new Ejercicio3.Nodo(65, null, null);
-        Ejercicio3.Nodo nodo10 = new Ejercicio3.Nodo(10, null, null);
-
-        // Creacion del arbol
-        Ejercicio3.Arbol arbol = new Ejercicio3.Arbol();
-
-        arbol.agregarNodo(nodo1);
-        arbol.agregarNodo(nodo3);
-        arbol.agregarNodo(nodo2);
-        arbol.agregarNodo(nodo65);
-        arbol.agregarNodo(nodo10);
-
-
-        // Relaciona los nodos entre si
-        nodo3.setLeft(nodo2);
-        nodo3.setRight(nodo65);
-
-        nodo65.setLeft(nodo1);
-        nodo65.setRight(nodo10);
-
-
-        arbol.mostrarArbol();
-
-        arbol.verificarArbolDeBusqueda(nodo3);
-
-    }
-
-    public static void ejercicio3_opcional(){
 
         // Ejercicio 3
 
@@ -126,7 +98,7 @@ public class Main {
         Nodo nodo3 = new Nodo(3, nodo2, nodo65);
 
         // Creacion del arbol
-        boolean retorno = Ejercicio3_opcional.esBinarioDeBusqueda(nodo3);
+        boolean retorno = Ejercicio3.esBinarioDeBusqueda(nodo3);
         if(retorno){
             System.out.println("Es binario de busqueda");
         }
@@ -143,7 +115,7 @@ public class Main {
         nodo3 = new Nodo(3, nodo2, nodo65);
 
         // Creacion del arbol
-        retorno = Ejercicio3_opcional.esBinarioDeBusqueda(nodo3);
+        retorno = Ejercicio3.esBinarioDeBusqueda(nodo3);
         if(retorno){
             System.out.println("Es binario de busqueda");
         }
@@ -167,7 +139,7 @@ public class Main {
         Nodo nodo41 = new Nodo(41, nodo30, nodo65);
 
         // Creacion del arbol
-        retorno = Ejercicio3_opcional.esBinarioDeBusqueda(nodo41);
+        retorno = Ejercicio3.esBinarioDeBusqueda(nodo41);
         if(retorno){
             System.out.println("Es binario de busqueda");
         }
@@ -189,21 +161,21 @@ public class Main {
         int Y1 = 2;
         System.out.println("A1 = " + Arrays.toString(A1));
         System.out.println("Salida esperada = 1");
-        System.out.println("Salida obtenida = " + contarFotosArtisticas(A1, X1, Y1) + "\n");
+        System.out.println("Salida obtenida = " + Ejercicio4.contarFotosArtisticas(A1, X1, Y1) + "\n");
 
         char[] A2 = {'a', 'f', 'a', 'e', 'a'};
         int X2 = 2;
         int Y2 = 3;
         System.out.println("A2 = " + Arrays.toString(A2));
         System.out.println("Salida esperada = 0");
-        System.out.println("Salida obtenida = " + contarFotosArtisticas(A2, X2, Y2) + "\n");
+        System.out.println("Salida obtenida = " + Ejercicio4.contarFotosArtisticas(A2, X2, Y2) + "\n");
 
         char[] A3 = {'.', 'f', 'e', 'a', 'a', 'f', '.', 'e'};
         int X3 = 1;
         int Y3 = 3;
         System.out.println("A3 = " + Arrays.toString(A3));
         System.out.println("Salida esperada = 3");
-        System.out.println("Salida obtenida = " + contarFotosArtisticas(A3, X3, Y3) + "\n");
+        System.out.println("Salida obtenida = " + Ejercicio4.contarFotosArtisticas(A3, X3, Y3) + "\n");
     }
 
 

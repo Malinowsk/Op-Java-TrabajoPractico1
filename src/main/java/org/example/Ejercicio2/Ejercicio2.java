@@ -17,30 +17,50 @@ fib(1000).
 */
 
 
-public class Ejercicio2 {
+public strictfp class Ejercicio2 {
 
     // Para el primer caso usaremos el tipo primitivo long, el cual tiene un tamaño de 64 bits
 
-//    public static long Fibonacci(int n) {
-//
-//        long fib = 0;
-//        long fibMenos1 = 1;  // Primer término
-//        long fibMenos2 = 1;  // Segundo término
-//
-//        if (n <= 1){
-//            return 1;}
-//        else {
-//            for (int i = 2; i < n; i++) {
-//                fib = fibMenos1 + fibMenos2;
-//                fibMenos2 = fibMenos1;
-//                fibMenos1 = fib;
-//            }
-//        }
-//
-//        return fib;
-//    }
+    public static long Fibonacci_primitivo(int n) {
+
+        long fib = 0;
+        long fibMenos1 = 1;  // Primer término
+        long fibMenos2 = 1;  // Segundo término
+
+        if (n <= 1){
+            return 1;}
+        else {
+            for (int i = 2; i < n; i++) {
+                fib = fibMenos1 + fibMenos2;
+                fibMenos2 = fibMenos1;
+                fibMenos1 = fib;
+            }
+        }
+
+        return fib;
+    }
 
     // El numero de Fibonacci para 90 es: 2880067194370816120
+
+
+
+    public static strictfp double Fibonacci_flotante(int n) {
+
+        double fib = 0.0d;
+        double fibMenos1 = 1.0d;  // Primer término
+        double fibMenos2 = 1.0d;  // Segundo término
+
+        if (n <= 1){
+            return 1.0d;}
+        else {
+            for (int i = 2; i < n; i++) {
+                fib = fibMenos1 + fibMenos2;
+                fibMenos2 = fibMenos1;
+                fibMenos1 = fib;
+            }
+        }
+        return fib;
+    }
 
 
 

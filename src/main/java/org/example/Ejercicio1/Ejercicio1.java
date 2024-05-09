@@ -14,6 +14,9 @@ es un parámetro. Finalmente, la igualdad entre las palabras debe ignorar el uso
 minúsculas.
 
  */
+/*
+*
+* */
 public class Ejercicio1 {
 
     private static StringBuilder palabraActual;
