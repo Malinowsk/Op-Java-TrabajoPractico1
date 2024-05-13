@@ -71,18 +71,25 @@ public class Main {
 
         // Ejercicio 2
 
-        int n = 90; // Valor de Fibonacci a calcular
-        long fibonacci_primitivo = Ejercicio2.Fibonacci_primitivo(n);
-        System.out.println("El valor de Fibonacci para " + n + " usando long es: " + fibonacci_primitivo);
+        int n = 77; // Valor de Fibonacci a calcular
 
-        n = 1000; // Valor de Fibonacci a calcular
-        double fibonacci_flotante = Ejercicio2.Fibonacci_flotante(n);
-        System.out.println("El valor de Fibonacci para " + n + " usando double es: " + fibonacci_flotante);
+        long fibonacciPrimitivo = Ejercicio2.fibonacciPrimitivo(n);
+        System.out.println("Fibonacci de " + n + " (versión long): " + fibonacciPrimitivo);
 
-        //
-        n = 1000; // Valor de Fibonacci a calcular
-        BigInteger fibonacci = Ejercicio2.Fibonacci(n);
-        System.out.println("El valor de Fibonacci para " + n + " usando BigInteger es: " + fibonacci);
+        double fibonacciFloat = Ejercicio2.fibonacciFloat(n);
+        System.out.println("Fibonacci de " + n + " (versión flotante): " + fibonacciFloat);
+
+        BigInteger fibonacciBigInteger = Ejercicio2.fibonacciBigInteger(n);
+        System.out.println("Fibonacci de " + n + " (versión BigInteger): " + fibonacciBigInteger);
+
+
+        // Comparación con BigInteger para verificar la precisión
+        if (fibonacciBigInteger.equals(BigInteger.valueOf((long) fibonacciFloat))){
+            System.out.println("Las dos implementaciones coinciden.");
+        } else {
+            System.out.println("Las dos implementaciones NO coinciden.");
+        }
+
     }
 
     public static void ejercicio3(){
