@@ -2,34 +2,10 @@ package org.example.Ejercicio4;
 
 /*
 
-Problema 4: Fotografía artística
-Se está desarrollando un sistema para un estudio fotográfico que desea saber cuántas fotografías
-artísticas se pueden realizar con un arreglo de fotógrafos, artistas y escenario. La organización de los
-fotógrafos, artistas y fondos se presenta en un arreglo A de N elementos, donde:
-
-A[i]=’f’ si en la posición i hay un fotógrafo.
-A[i]=’a’ si en la posición i hay un artista.
-A[i]=’e’ si en la posición i hay un escenario.
-A[i]=’.’ si en la posición i no hay nada.
-Para que una fotografía sea artística, un fotógrafo debe encontrarse a una distancia entre X e Y de un
-artista, que a su vez debe estar a una distancia entre X e Y de un escenario en la misma dirección.
-Ejemplos:
-
-Caso
-A=afaea
-X=1
-Y=2
-Salida esperada = 1
-
-A=afaea
-X=2
-Y=3
-Salida esperada = 0
-
-A=.feaaf.e
-X=1
-Y=3
-Salida esperada = 3
+La estrategia utilizada para resolver el problema es recorrer el arreglo A en busca de fotógrafos ('f').
+Una vez que se encuentra un fotógrafo, se realizan dos recorridos: uno hacia la derecha y otro hacia la izquierda, en busca de artistas ('a').
+Para cada artista encontrado, se realiza otro recorrido en la misma dirección para encontrar un escenario ('e').
+Si se cumplen todas las condiciones de distancia especificadas por los valores de X e Y, se incrementa el contador de fotografías artísticas.
 
 */
 
