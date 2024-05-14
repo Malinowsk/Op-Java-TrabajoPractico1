@@ -15,14 +15,13 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
 
-       /* System.out.println("Ejercicio 1: ");
+        System.out.println("Ejercicio 1: ");
         System.out.println();
-        ejercicio1();*/
+        ejercicio1();
         System.out.println();
         System.out.println("Ejercicio 2: ");
         System.out.println();
         ejercicio2();
-  /*
         System.out.println();
         System.out.println("Ejercicio 3: ");
         System.out.println();
@@ -35,7 +34,7 @@ public class Main {
         System.out.println("Ejercicio 5: ");
         System.out.println();
         ejercicio5();
-*/
+
     }
 
     public static void ejercicio1(){

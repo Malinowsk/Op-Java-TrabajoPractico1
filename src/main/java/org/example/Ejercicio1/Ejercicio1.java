@@ -8,6 +8,7 @@ import java.util.Map;
 
 La estrategia utilizada consiste en recorrer el texto caracter por caracter y construir las palabras mediante el ensamblaje de caracteres consecutivos que son letras.
 Cuando se encuentra un caracter que no es una letra, se considera que una palabra ha terminado y se procede a guardarla en un HashMap junto con su conteo de ocurrencias.
+En esa misma iteracion nos quedando con la palabra que mas veces se repite.
 
 La comparación entre palabras se hace ignorando las diferencias entre mayúsculas y minúsculas, lo que asegura que palabras como "Casa" y "casa" sean consideradas iguales.
 

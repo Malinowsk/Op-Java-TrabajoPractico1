@@ -3,9 +3,18 @@ package org.example.Ejercicio5;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+
+La estrategia utilizada es el backtracking utilizando un procedimiento recursivo, dado una matriz y una posicion
+se busca las soluciones para los 4 movimientos posibles, quedandonos con la mejor solucion.
+Si algun camino no es solucion se devuelve -1.
+Para los portales, utilizo una variable boleana para saber si estoy entrando o saliendo del portal,
+para el caso de que estoy entrando, armo un hashmap con todas las posibles portales que puedo tomar.
+*/
+
+
 public class Ejercicio5 {
 
-    private static char[][] juego;
     private static int pos_x;
     private static int pos_y;
     private static int cols;
@@ -13,7 +22,6 @@ public class Ejercicio5 {
 
     // la estrategia es no volver por el mismo camino
     public static int getJuego(char[][] matriz, int columnas, int filas, int pos_inicio_x, int pos_inicio_y) {
-        juego = matriz;
         int pasos = -1;
 
         cols = columnas;
