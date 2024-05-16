@@ -73,6 +73,5 @@ public class Ejercicio1 {
             palabraActual.setLength(0); // Limpiar la palabra actual
         }
     }
-
 }
 
