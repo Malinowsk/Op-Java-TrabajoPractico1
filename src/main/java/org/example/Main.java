@@ -70,7 +70,7 @@ public class Main {
 
         // Ejercicio 2
 
-        int n = 77; // Valor de Fibonacci a calcular
+        int n = 1000; // Valor de Fibonacci a calcular
 
         long fibonacciPrimitivo = Ejercicio2.fibonacciPrimitivo(n);
         System.out.println("Fibonacci de " + n + " (versión long): " + fibonacciPrimitivo);
@@ -84,9 +84,9 @@ public class Main {
 
         // Comparación con BigInteger para verificar la precisión
         if (fibonacciBigInteger.equals(BigInteger.valueOf((long) fibonacciFloat))){
-            System.out.println("Las dos implementaciones coinciden.");
+            System.out.println("Las implementaciones coinciden.");
         } else {
-            System.out.println("Las dos implementaciones NO coinciden.");
+            System.out.println("Las implementaciones NO coinciden.");
         }
 
     }
@@ -182,6 +182,13 @@ public class Main {
         System.out.println("A3 = " + Arrays.toString(A3));
         System.out.println("Salida esperada = 3");
         System.out.println("Salida obtenida = " + Ejercicio4.contarFotosArtisticas(A3, X3, Y3) + "\n");
+
+        char[] A4 = {'f', 'a', 'f', '.', 'f', 'a', 'e', 'a', 'f'};
+        int X4 = 1;
+        int Y4 = 2;
+        System.out.println("A4 = " + Arrays.toString(A4));
+        System.out.println("Salida esperada = 2");
+        System.out.println("Salida obtenida = " + Ejercicio4.contarFotosArtisticas(A4, X4, Y4) + "\n");
     }
 
 
